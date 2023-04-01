@@ -49,13 +49,15 @@ export async function getServerSideProps(context) {
   if(session) {
     return {
       redirect: {
-        destination: "/home",
+        destination: "/api/auth/signin",
         permanent: false,
       },
     };
   }
 
   return {
-    props: {},
+    props: {
+      session,
+    },
   };
 }
